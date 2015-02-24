@@ -1,4 +1,5 @@
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_tmparchive\tmparchive.rb %1
+PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bookmaker_scripts\WordXML-to-HTML -folder" %1
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_htmlmaker\htmlmaker.rb %1
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_filearchive\filearchive.rb %1
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_coverchecker\coverchecker.rb %1
