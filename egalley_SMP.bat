@@ -1,5 +1,5 @@
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_tmparchive\tmparchive.rb %1
-REM PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bookmaker_scripts\WordXML-to-HTML\DocxToXml.ps1 '%1'"
+PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bookmaker_scripts\WordXML-to-HTML\DocxToXml.ps1 '%1'"
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_htmlmaker\htmlmaker.rb %1
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_filearchive\filearchive.rb %1
 SET SSL_CERT_FILE=C:\Ruby193\lib\ruby\site_ruby\1.9.1\rubygems\ssl_certs\cacert.pem
