@@ -39,3 +39,41 @@ Each script in the Bookmaker sequence performs a distinct set of actions that bu
 [cleanup](https://github.com/macmillanpublishers/bookmaker_cleanup): Removes all temporary working files and working dirs.
 
 *Dependencies: tmparchive, htmlmaker, filearchive, imagechecker, coverchecker, chapterheads*
+
+## Required Folder Structure
+
+The Bookmaker toolchain requires a specific folder structure and sequence of parent folders in order to function correctly. The requirements are as follows:
+
+* The folder in which the conversion takes place should be nested within 2 parent folders, as foolows: _MainParentFolder/SubParentFolder/ConversionFolder/_
+* The *main parent folder* lists the name of the imprint or book series. This naming must exactly match the css and images subfolders within the pdfmaker, epubmaker, and covermaker repositories.
+* The *sub parent folder* should list the variant for the book series. For example, "galley_files", etc. This second level allows us to create different conversion instructions for the same series, if needed.
+* The *conversion folder* is the folder where files to be converted should be dropped. It should contain _only_ the file to be converted.
+
+At the same level as the conversion folder, two sibling folders are required, following these exact naming conventions:
+
+* *submitted_images*: This is where any images (including book front cover) should be placed before initiating the conversion.
+* *done*: This is where completed conversion will be archived automatically by Bookmaker.
+
+Additionally, the following directory structures are required:
+* All supplemental resources (saxon, zip) should live in the same parent folder, at the same level (i.e., they should be siblings to each other).
+* All bookmaker scripts (including WordXML-to-HTML, HTMLBook, and covermaker) should live within the same parent folder, at the same level.
+* A folder must exist for storing log files. This can live anywhere.
+* A temporary working directory should be created, where Bookmaker can perform the conversions before archiving the final files. This can live anywhere.
+
+The above four paths are configurable within the Bookmaker scripts--look for the following block:
+
+    # --------------------USER CONFIGURED PATHS START--------------------
+    # These are static paths to folders on your system.
+    # These paths will need to be updated to reflect your current 
+    # directory structure.
+    
+    # set temp working dir based on current volume
+    tmp_dir = "#{currvol}\\bookmaker_tmp"
+    # set directory for logging output
+    log_dir = "S:\\resources\\logs"
+    # set directory where bookmkaer scripts live
+    bookmaker_dir = "S:\\resources\\bookmaker_scripts"
+    # set directory where other resources are installed
+    # (for example, saxon, zip)
+    resource_dir = "C:"
+    # --------------------USER CONFIGURED PATHS END--------------------
