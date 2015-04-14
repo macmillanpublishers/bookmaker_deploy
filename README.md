@@ -2,7 +2,11 @@
 
 This repository houses the .bat files that configure each implementation of the Bookmaker tool - an automated process for converting manuscripts into PDF and EPUB formats.
 
-Each script in the Bookmaker sequence performs a distinct set of actions that builds on the scripts that came before, and depends on any number of other scripts or tools. These scripts were written specifically for use at Macmillan, and thus many of the filenames, arguments, and paths are direct references to that internal workflow. The scripts are as follows:
+Each script in the Bookmaker sequence performs a distinct set of actions that builds on the scripts that came before, and depends on any number of other scripts or tools. These scripts were written specifically for use at Macmillan, and thus many of the filenames, arguments, and paths are direct references to that internal workflow. Additionally, because Macmillan uses Windows servers, all paths and commands are structured for a Windows environment.
+
+## Bookmaker Components
+
+The scripts are as follows:
 
 [tmparchive](https://github.com/macmillanpublishers/bookmaker_tmparchive): Creates the temporary working directory for the file to be converted, and opens an alert to the user telling them the tool is in use.
 
