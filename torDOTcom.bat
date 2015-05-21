@@ -10,3 +10,4 @@ C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_pdfmaker\pdfmak
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\pitstop_watch\torDOTcom_pitstop_input.rb %1
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_epubmaker\epubmaker.rb %1
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_cleanup\cleanup.rb %1
+C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\pitstop_watch\torDOTcom_pitstop_alert.rb %1
