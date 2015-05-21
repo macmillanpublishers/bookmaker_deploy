@@ -8,5 +8,6 @@ C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_chapterheads\ch
 SET SSL_CERT_FILE=C:\Ruby193\lib\ruby\site_ruby\1.9.1\rubygems\ssl_certs\cacert.pem
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_pdfmaker\pdfmaker.rb %1
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_epubmaker\epubmaker.rb %1
-C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_cleanup\cleanup.rb %1
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\pitstop_watch\torDOTcom_pitstop_input.rb %1
+C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_cleanup\cleanup.rb %1
+C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\pitstop_watch\torDOTcom_pitstop_alert.rb %1
