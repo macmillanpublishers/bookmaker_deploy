@@ -7,6 +7,6 @@ SET SSL_CERT_FILE=C:\Ruby193\lib\ruby\site_ruby\1.9.1\rubygems\ssl_certs\cacert.
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\covermaker\bookmaker_covermaker.rb %1
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\coverchecker\coverchecker.rb %1
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\imagechecker\imagechecker.rb %1
-C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\chapterheads\chapterheads.rb %1
+C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\stylesheets\stylesheets.rb %1
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\epubmaker\epubmaker.rb %1
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\cleanup\cleanup.rb %1
