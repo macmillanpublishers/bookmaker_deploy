@@ -3,14 +3,14 @@ set logfile="S:\resources\logs\%~n1-stdout-and-err.txt"
 if not exist "S:\resources\logs\processLogs" mkdir "S:\resources\logs\processLogs"
 For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set mydate=%%c-%%a-%%b)
 For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a%%b)
-set p_log="S:\resources\logs\processLogs\%~n1_%mydate%_%mytime%.txt"
-set p_log_tmp="S:\resources\logs\processLogs\pLogTmp.txt"
+set p_log="S:\resources\logs\processLogs\%~n1_%mydate%-%mytime%_torDOTcomFinal.txt"
+set p_log_tmp="S:\resources\logs\processLogs\%~n1_%mydate%-%mytime%_torDOTcomFinalTmp.txt"
 
 rem write scriptnames to file for ProcessLogger to rm on success:
 (
-    echo tmparchive
-    echo htmlmaker
-    echo metadata_preprocessing
+	echo tmparchive
+	echo htmlmaker
+	echo metadata_preprocessing
 	echo filearchive
 	echo coverchecker
 	echo imagechecker
@@ -30,6 +30,7 @@ rem write scriptnames to file for ProcessLogger to rm on success:
 
 @echo on
 @echo %date% %time% >> %logfile% 2>&1
+start /b PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bookmaker_scripts\utilities\processwatch.ps1 %p_log% '%1'"
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\tmparchive\tmparchive.rb %1 >> %logfile% 2>&1 && call :ProcessLogger tmparchive
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\htmlmaker\htmlmaker.rb %1 >> %logfile% 2>&1 && call :ProcessLogger htmlmaker
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\metadata_preprocessing.rb %1 >> %logfile% 2>&1 && call :ProcessLogger metadata_preprocessing
