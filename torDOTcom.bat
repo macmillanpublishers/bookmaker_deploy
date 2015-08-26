@@ -35,8 +35,8 @@ start /b PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bo
 SLEEP 10
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\tmparchive\tmparchive.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger tmparchive
 SLEEP 10
-C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\htmlmaker\htmlmaker.rb "%1" >> %logfile% 2>&1 && call :ProcessLogger htmlmaker
-C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\metadata_preprocessing.rb "%1" >> %logfile% 2>&1 && call :ProcessLogger metadata_preprocessing
+C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\htmlmaker\htmlmaker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker
+C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\metadata_preprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger metadata_preprocessing
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\filearchive\filearchive.rb "%1" >> %logfile% 2>&1 && call :ProcessLogger filearchive
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\imagechecker\imagechecker.rb "%1" >> %logfile% 2>&1 && call :ProcessLogger imagechecker
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\coverchecker\coverchecker.rb "%1" >> %logfile% 2>&1 && call :ProcessLogger coverchecker
