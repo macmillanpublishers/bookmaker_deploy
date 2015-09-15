@@ -11,8 +11,8 @@ rem write scriptnames to file for ProcessLogger to rm on success:
 	echo tmparchive
 	echo htmlmaker
 	echo metadata_preprocessing
-	echo filearchive_preprocessing
 	echo filearchive
+	echo filearchive_postprocessing
 	echo imagechecker
 	echo cacert
 	echo covermaker	
@@ -39,8 +39,8 @@ SLEEP 10
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\tmparchive\tmparchive.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger tmparchive
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\htmlmaker\htmlmaker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\metadata_preprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger metadata_preprocessing
-C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\filearchive_preprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger filearchive_preprocessing
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\filearchive\filearchive.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger filearchive
+C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\filearchive_postprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger filearchive_postprocessing
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\imagechecker\imagechecker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger imagechecker
 SET SSL_CERT_FILE=C:\Ruby193\lib\ruby\site_ruby\1.9.1\rubygems\ssl_certs\cacert.pem >> %logfile% 2>&1 && call :ProcessLogger cacert 
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\covermaker\bookmaker_covermaker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger covermaker
