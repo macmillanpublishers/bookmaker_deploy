@@ -9,9 +9,9 @@ set p_log_tmp="S:\resources\logs\processLogs\%~n1_%mydate%-%mytime%_egalleyTorDO
 rem write scriptnames to file for ProcessLogger to rm on success:
 (
 	echo tmparchive
+	echo htmlmaker_preprocessing
 	echo htmlmaker
 	echo metadata_preprocessing
-	echo htmlmaker_preprocessing
 	echo htmlmaker_postprocessing
 	echo filearchive
 	echo filearchive_postprocessing
