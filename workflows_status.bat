@@ -57,7 +57,7 @@ C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\epubmake
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\pitstop_watch\torDOTcom_pitstop_output.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger torDOTcom_pitstop_output
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\cleanup\cleanup.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger cleanup
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bookmaker_scripts\utilities\mail-alert.ps1 '%1'" && call :ProcessLogger mail-alert
-C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\utlities\bookmaker_status_checker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger status_check
+C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\utilities\bookmaker_status_checker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger status_check
 
 goto:eof
 rem ************  Function *************
