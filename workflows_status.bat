@@ -19,14 +19,9 @@ rem write scriptnames to file for ProcessLogger to rm on success:
 	echo coverchecker
 	echo stylesheets
 	echo stylesheets_postprocessing
-	echo pdfmaker_preprocessing
-	echo cacert
-	echo pdfmaker
-	echo torDOTcom_pitstop_input
 	echo epubmaker_preprocessing
 	echo epubmaker
 	echo epubmaker_postprocessing
-	echo torDOTcom_pitstop_output
 	echo cleanup
 	echo mail-alert
 	echo status_check
@@ -47,14 +42,9 @@ C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\imagecheck
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\coverchecker\coverchecker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger coverchecker
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\stylesheets\stylesheets.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger stylesheets
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\stylesheets_postprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger stylesheets_postprocessing
-C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\pdfmaker_preprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger pdfmaker_preprocessing
-SET SSL_CERT_FILE=C:\Ruby193\lib\ruby\site_ruby\1.9.1\rubygems\ssl_certs\cacert.pem >> %logfile% 2>&1 && call :ProcessLogger cacert 
-C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\pdfmaker\pdfmaker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger pdfmaker
-C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\pitstop_watch\torDOTcom_pitstop_input.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger torDOTcom_pitstop_input
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\epubmaker_preprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger epubmaker_preprocessing
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\epubmaker\epubmaker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger epubmaker
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\epubmaker_postprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger epubmaker_postprocessing
-C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\pitstop_watch\torDOTcom_pitstop_output.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger torDOTcom_pitstop_output
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\cleanup\cleanup.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger cleanup
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bookmaker_scripts\utilities\mail-alert.ps1 '%1'" && call :ProcessLogger mail-alert
 C:\Ruby193\bin\ruby.exe S:\resources\bookmaker_scripts\utilities\bookmaker_status_checker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger status_check
