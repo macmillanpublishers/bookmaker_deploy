@@ -1,0 +1,473 @@
+{
+  "scripts" : [
+    {
+    "name": "tmparchive",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRCORE\\tmparchive\\tmparchive.rb",
+    "argv": "'%1' ",
+    "testvalue": "tmparchive"
+    },
+    {
+    "name": "htmlmaker_preprocessing",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRADDONS\\htmlmaker_preprocessing.rb",
+    "argv": "'%1' ",
+    "testvalue": "htmlmaker_preprocessing"
+    },
+    {
+    "name": "htmlmaker",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRCORE\\htmlmaker\\htmlmaker.rb",
+    "argv": "'%1' ",
+    "testvalue": "htmlmaker"
+    },
+     {
+    "name": "metadata_preprocessing",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRADDONS\\metadata_preprocessing.rb",
+    "argv": "'%1' ",
+    "testvalue": "metadata_preprocessing"
+    },
+    {
+    "name": "htmlmaker_postprocessing",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRADDONS\\htmlmaker_postprocessing.rb",
+    "argv": "'%1' ",
+    "testvalue": "htmlmaker_postprocessing"
+    },
+    {
+    "name": "filearchive",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRCORE\\filearchive\\filearchive.rb",
+    "argv": "'%1' ",
+    "testvalue": "filearchive"
+    },
+    {
+    "name": "filearchive_postprocessing",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRADDONS\\filearchive_postprocessing.rb",
+    "argv": "'%1' ",
+    "testvalue": "filearchive_postprocessing"
+    },
+    {
+    "name": "imagechecker",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRCORE\\imagechecker\\imagechecker.rb",
+    "argv": "'%1' ",
+    "testvalue": "imagechecker"
+    },
+    {
+    "name": "coverchecker",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRCORE\\coverchecker\\coverchecker.rb",
+    "argv": "'%1' ",
+    "testvalue": "coverchecker"
+    },
+    {
+    "name": "stylesheets_preprocessing",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRADDONS\\stylesheets_preprocessing.rb",
+    "argv": "'%1' ",
+    "testvalue": "stylesheets_preprocessing"
+    },
+    {
+    "name": "stylesheets",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRCORE\\stylesheets\\stylesheets.rb",
+    "argv": "'%1' ",
+    "testvalue": "stylesheets"
+    },
+    {
+    "name": "stylesheets_postprocessing",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRADDONS\\stylesheets_postprocessing.rb",
+    "argv": "'%1' ",
+    "testvalue": "stylesheets_postprocessing"
+    },
+    {
+    "name": "pdfmaker_preprocessing",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRADDONS\\pdfmaker_preprocessing.rb",
+    "argv": "'%1' ",
+    "testvalue": "pdfmaker_preprocessing"
+    },
+    {
+    "name": "cacert",
+    "filetype": "pem",
+    "command": "SET SSL_CERT_FILE=C:\\Ruby193\\lib\\ruby\\site_ruby\\1.9.1\\rubygems\\ssl_certs\\cacert.pem",
+    "location": "",
+    "argv": "",
+    "testvalue": "cacert"
+    },
+    {
+    "name": "pdfmaker",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRCORE\\pdfmaker\\pdfmaker.rb",
+    "argv": "'%1' ",
+    "testvalue": "pdfmaker"
+    },
+    {
+    "name": "torDOTcom_pitstop_input",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "PITSTOP\\torDOTcom_pitstop_input.rb",
+    "argv": "'%1' ",
+    "testvalue": "torDOTcom_pitstop_input"
+    },
+    {
+    "name": "epubmaker_preprocessing",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRADDONS\\epubmaker_preprocessing.rb",
+    "argv": "'%1' ",
+    "testvalue": "epubmaker_preprocessing"
+    },
+    {
+    "name": "epubmaker",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRCORE\\epubmaker\\epubmaker.rb",
+    "argv": "'%1' ",
+    "testvalue": "epubmaker"
+    },
+    {
+    "name": "epubmaker_postprocessing",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRADDONS\\epubmaker_postprocessing.rb",
+    "argv": "'%1' ",
+    "testvalue": "epubmaker_postprocessing"
+    },
+    {
+    "name": "torDOTcom_pitstop_output",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "PITSTOP\\torDOTcom_pitstop_output.rb",
+    "argv": "'%1' ",
+    "testvalue": "torDOTcom_pitstop_output"
+    },
+    {
+    "name": "cleanup_preprocessing",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRADDONS\\cleanup_preprocessing.rb",
+    "argv": "'%1' ",
+    "testvalue": "cleanup_preprocessing"
+    },
+    {
+    "name": "cleanup",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRCORE\\cleanup\\cleanup.rb",
+    "argv": "'%1' ",
+    "testvalue": "cleanup"
+    },
+    {
+    "name": "bookmaker_covermaker",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "S:\\resources\\bookmaker_scripts\\covermaker\\bookmaker_covermaker.rb",
+    "argv": "'%1' ",
+    "testvalue": "covermaker"
+    },
+    {
+    "name": "bookmaker_samplecover",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "S:\\resources\\bookmaker_scripts\\covermaker\\bookmaker_samplecover.rb",
+    "argv": "'%1' ",
+    "testvalue": "samplecover"
+    }
+  ],
+  "projects" : [
+    {
+    "name": "arc_picador.bat",
+    "scripts": [
+      {"name": "tmparchive"},
+      {"name": "htmlmaker_preprocessing"},
+      {"name": "htmlmaker"},
+      {"name": "metadata_preprocessing"},
+      {"name": "htmlmaker_postprocessing"},
+      {"name": "filearchive"},
+      {"name": "filearchive_postprocessing"},
+      {"name": "imagechecker"},
+      {"name": "cacert"},
+      {"name": "bookmaker_covermaker"},
+      {"name": "coverchecker"},
+      {"name": "stylesheets_preprocessing"},
+      {"name": "stylesheets"},
+      {"name": "stylesheets_postprocessing"},
+      {"name": "pdfmaker_preprocessing"},
+      {"name": "cacert"},
+      {"name": "pdfmaker"},
+      {"name": "torDOTcom_pitstop_input"},
+      {"name": "epubmaker_preprocessing"},
+      {"name": "epubmaker"},
+      {"name": "epubmaker_postprocessing"},
+      {"name": "torDOTcom_pitstop_output"},
+      {"name": "cleanup_preprocessing"},
+      {"name": "cleanup"}
+    ],
+    "processwatch": true,
+    "statuscheck": false
+    },
+    {
+    "name": "egalley_SMP.bat",
+    "scripts": [
+      {"name": "tmparchive"},
+      {"name": "htmlmaker_preprocessing"},
+      {"name": "htmlmaker"},
+      {"name": "metadata_preprocessing"},
+      {"name": "htmlmaker_postprocessing"},
+      {"name": "filearchive"},
+      {"name": "filearchive_postprocessing"},
+      {"name": "imagechecker"},
+      {"name": "cacert"},
+      {"name": "bookmaker_covermaker"},
+      {"name": "coverchecker"},
+      {"name": "stylesheets_preprocessing"},
+      {"name": "stylesheets"},
+      {"name": "stylesheets_postprocessing"},
+      {"name": "epubmaker_preprocessing"},
+      {"name": "epubmaker"},
+      {"name": "epubmaker_postprocessing"},
+      {"name": "cleanup_preprocessing"},
+      {"name": "cleanup"}
+    ],
+    "processwatch": true,
+    "statuscheck": false
+    },
+    {
+    "name": "egalley_swerve.bat",
+    "scripts": [
+      {"name": "tmparchive"},
+      {"name": "htmlmaker_preprocessing"},
+      {"name": "htmlmaker"},
+      {"name": "metadata_preprocessing"},
+      {"name": "htmlmaker_postprocessing"},
+      {"name": "filearchive"},
+      {"name": "filearchive_postprocessing"},
+      {"name": "imagechecker"},
+      {"name": "cacert"},
+      {"name": "bookmaker_covermaker"},
+      {"name": "coverchecker"},
+      {"name": "stylesheets_preprocessing"},
+      {"name": "stylesheets"},
+      {"name": "stylesheets_postprocessing"},
+      {"name": "epubmaker_preprocessing"},
+      {"name": "epubmaker"},
+      {"name": "epubmaker_postprocessing"},
+      {"name": "cleanup_preprocessing"},
+      {"name": "cleanup"}
+    ],
+    "processwatch": true,
+    "statuscheck": false
+    },
+    {
+    "name": "egalley_torDOTcom.bat",
+    "scripts": [
+      {"name": "tmparchive"},
+      {"name": "htmlmaker_preprocessing"},
+      {"name": "htmlmaker"},
+      {"name": "metadata_preprocessing"},
+      {"name": "htmlmaker_postprocessing"},
+      {"name": "filearchive"},
+      {"name": "filearchive_postprocessing"},
+      {"name": "imagechecker"},
+      {"name": "cacert"},
+      {"name": "bookmaker_covermaker"},
+      {"name": "coverchecker"},
+      {"name": "stylesheets_preprocessing"},
+      {"name": "stylesheets"},
+      {"name": "stylesheets_postprocessing"},
+      {"name": "pdfmaker_preprocessing"},
+      {"name": "cacert"},
+      {"name": "pdfmaker"},
+      {"name": "torDOTcom_pitstop_input"},
+      {"name": "epubmaker_preprocessing"},
+      {"name": "epubmaker"},
+      {"name": "epubmaker_postprocessing"},
+      {"name": "torDOTcom_pitstop_output"},
+      {"name": "cleanup_preprocessing"},
+      {"name": "cleanup"}
+    ],
+    "processwatch": true,
+    "statuscheck": false
+    },
+    {
+    "name": "final_swerve.bat",
+    "scripts": [
+      {"name": "tmparchive"},
+      {"name": "htmlmaker_preprocessing"},
+      {"name": "htmlmaker"},
+      {"name": "metadata_preprocessing"},
+      {"name": "htmlmaker_postprocessing"},
+      {"name": "filearchive"},
+      {"name": "filearchive_postprocessing"},
+      {"name": "imagechecker"},
+      {"name": "coverchecker"},
+      {"name": "stylesheets_preprocessing"},
+      {"name": "stylesheets"},
+      {"name": "stylesheets_postprocessing"},
+      {"name": "epubmaker_preprocessing"},
+      {"name": "epubmaker"},
+      {"name": "epubmaker_postprocessing"},
+      {"name": "cleanup_preprocessing"},
+      {"name": "cleanup"}
+    ],
+    "processwatch": true,
+    "statuscheck": false
+    },
+    {
+    "name": "generic.bat",
+    "scripts": [
+      {"name": "tmparchive"},
+      {"name": "htmlmaker"},
+      {"name": "filearchive"},
+      {"name": "imagechecker"},
+      {"name": "coverchecker"},
+      {"name": "stylesheets"},
+      {"name": "cacert"},
+      {"name": "pdfmaker"},
+      {"name": "epubmaker"},
+      {"name": "cleanup"}
+    ],
+    "processwatch": true,
+    "statuscheck": false
+    },
+    {
+    "name": "pod_swerve.bat",
+    "scripts": [
+      {"name": "tmparchive"},
+      {"name": "htmlmaker_preprocessing"},
+      {"name": "htmlmaker"},
+      {"name": "metadata_preprocessing"},
+      {"name": "htmlmaker_postprocessing"},
+      {"name": "filearchive"},
+      {"name": "filearchive_postprocessing"},
+      {"name": "imagechecker"},
+      {"name": "stylesheets_preprocessing"},
+      {"name": "stylesheets"},
+      {"name": "stylesheets_postprocessing"},
+      {"name": "pdfmaker_preprocessing"},
+      {"name": "cacert"},
+      {"name": "pdfmaker"},
+      {"name": "torDOTcom_pitstop_input"},
+      {"name": "torDOTcom_pitstop_output"},
+      {"name": "cleanup_preprocessing"},
+      {"name": "cleanup"}
+    ],
+    "processwatch": true,
+    "statuscheck": false
+    },
+    {
+    "name": "sample_SMP.bat",
+    "scripts": [
+      {"name": "tmparchive"},
+      {"name": "htmlmaker_preprocessing"},
+      {"name": "htmlmaker"},
+      {"name": "metadata_preprocessing"},
+      {"name": "htmlmaker_postprocessing"},
+      {"name": "filearchive"},
+      {"name": "filearchive_postprocessing"},
+      {"name": "imagechecker"},
+      {"name": "cacert"},
+      {"name": "bookmaker_samplecover"},
+      {"name": "coverchecker"},
+      {"name": "stylesheets_preprocessing"},
+      {"name": "stylesheets"},
+      {"name": "stylesheets_postprocessing"},
+      {"name": "epubmaker_preprocessing"},
+      {"name": "epubmaker"},
+      {"name": "epubmaker_postprocessing"},
+      {"name": "cleanup_preprocessing"},
+      {"name": "cleanup"}
+    ],
+    "processwatch": true,
+    "statuscheck": false
+    },
+    {
+    "name": "swoon.bat",
+    "scripts": [
+      {"name": "tmparchive"},
+      {"name": "htmlmaker_preprocessing"},
+      {"name": "htmlmaker"},
+      {"name": "metadata_preprocessing"},
+      {"name": "htmlmaker_postprocessing"},
+      {"name": "filearchive"},
+      {"name": "filearchive_postprocessing"},
+      {"name": "cleanup_preprocessing"},
+      {"name": "cleanup"}
+    ],
+    "processwatch": true,
+    "statuscheck": false
+    },
+    {
+    "name": "torDOTcom.bat",
+    "scripts": [
+      {"name": "tmparchive"},
+      {"name": "htmlmaker_preprocessing"},
+      {"name": "htmlmaker"},
+      {"name": "metadata_preprocessing"},
+      {"name": "htmlmaker_postprocessing"},
+      {"name": "filearchive"},
+      {"name": "filearchive_postprocessing"},
+      {"name": "imagechecker"},
+      {"name": "coverchecker"},
+      {"name": "stylesheets_preprocessing"},
+      {"name": "stylesheets"},
+      {"name": "stylesheets_postprocessing"},
+      {"name": "pdfmaker_preprocessing"},
+      {"name": "cacert"},
+      {"name": "pdfmaker"},
+      {"name": "torDOTcom_pitstop_input"},
+      {"name": "epubmaker_preprocessing"},
+      {"name": "epubmaker"},
+      {"name": "epubmaker_postprocessing"},
+      {"name": "torDOTcom_pitstop_output"},
+      {"name": "cleanup_preprocessing"},
+      {"name": "cleanup"}
+    ],
+    "processwatch": true,
+    "statuscheck": false
+    },
+    {
+    "name": "workflows_status.bat",
+    "scripts": [
+      {"name": "tmparchive"},
+      {"name": "htmlmaker_preprocessing"},
+      {"name": "htmlmaker"},
+      {"name": "metadata_preprocessing"},
+      {"name": "htmlmaker_postprocessing"},
+      {"name": "filearchive"},
+      {"name": "filearchive_postprocessing"},
+      {"name": "imagechecker"},
+      {"name": "coverchecker"},
+      {"name": "stylesheets_preprocessing"},
+      {"name": "stylesheets"},
+      {"name": "stylesheets_postprocessing"},
+      {"name": "epubmaker_preprocessing"},
+      {"name": "epubmaker"},
+      {"name": "epubmaker_postprocessing"},
+      {"name": "cleanup_preprocessing"},
+      {"name": "cleanup"}
+    ],
+    "processwatch": true,
+    "statuscheck": true
+    }
+  ]
+}
