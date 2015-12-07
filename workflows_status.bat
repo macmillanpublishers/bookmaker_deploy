@@ -8,23 +8,23 @@ set p_log_tmp="S:\resources\logs\processLogs\%~n1_%mydate%-%mytime%_torDOTcomFin
 
 rem write scriptnames to file for ProcessLogger to rm on success:
 (
-	echo tmparchive
-	echo htmlmaker_preprocessing
-	echo htmlmaker
-	echo metadata_preprocessing
-	echo htmlmaker_postprocessing
-	echo filearchive
-	echo filearchive_postprocessing
-	echo imagechecker
-	echo coverchecker
-	echo stylesheets_preprocessing
-	echo stylesheets
-	echo stylesheets_postprocessing
-	echo epubmaker_preprocessing
-	echo epubmaker
-	echo epubmaker_postprocessing
-	echo cleanup_preprocessing
-	echo cleanup
+  echo tmparchive
+  echo htmlmaker_preprocessing
+  echo htmlmaker
+  echo metadata_preprocessing
+  echo htmlmaker_postprocessing
+  echo filearchive
+  echo filearchive_postprocessing
+  echo imagechecker
+  echo coverchecker
+  echo stylesheets_preprocessing
+  echo stylesheets
+  echo stylesheets_postprocessing
+  echo epubmaker_preprocessing
+  echo epubmaker
+  echo epubmaker_postprocessing
+  echo cleanup_preprocessing
+  echo cleanup
 	echo mail-alert
 	echo status_check
 ) >%p_log%
