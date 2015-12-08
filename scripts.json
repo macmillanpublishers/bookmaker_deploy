@@ -191,6 +191,14 @@
     "location": "S:\\resources\\bookmaker_scripts\\covermaker\\bookmaker_samplecover.rb",
     "argv": "'%1' ",
     "testvalue": "samplecover"
+    },
+    {
+    "name": "bookmaker_titlepage",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "S:\\resources\\bookmaker_scripts\\covermaker\\bookmaker_titlepage.rb",
+    "argv": "'%1' ",
+    "testvalue": "titlepage"
     }
   ],
   "projects" : [
@@ -231,6 +239,8 @@
       {"name": "tmparchive"},
       {"name": "htmlmaker_preprocessing"},
       {"name": "htmlmaker"},
+      {"name": "cacert"},
+      {"name": "bookmaker_titlepage"},
       {"name": "metadata_preprocessing"},
       {"name": "htmlmaker_postprocessing"},
       {"name": "filearchive"},
