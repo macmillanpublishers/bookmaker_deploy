@@ -5,7 +5,7 @@ For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set mydate=%%c-%%a-%%b)
 For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a%%b)
 set p_log="S:\resources\logs\processLogs\%~n1_%mydate%-%mytime%_torDOTcomFinal.txt"
 set p_log_tmp="S:\resources\logs\processLogs\%~n1_%mydate%-%mytime%_torDOTcomFinalTmp.txt"
-if exist "S:\resources\logs\%~n1-stdout-and-err.txt" move "S:\resources\logs\%~n1-stdout-and-err.txt" "S:\resources\logs\past\%~n1-stdout-and-err_%mydate%-%mytime%.txt"
+if exist "S:\resources\logs\%~n1-stdout-and-err.txt" move "S:\resources\logs\%~n1-stdout-and-err.txt" "S:\resources\logs\past\%~n1-stdout-and-err_ARCHIVED_%mydate%-%mytime%.txt"
 
 rem write scriptnames to file for ProcessLogger to rm on success:
 (
