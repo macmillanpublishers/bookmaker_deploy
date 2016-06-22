@@ -444,6 +444,35 @@
     "statuscheck": false
     },
     {
+    "name": "automated_EGALLEY.bat",
+    "scripts": [
+      {"name": "tmparchive"},
+      {"name": "htmlmaker_preprocessing"},
+      {"name": "htmlmaker"},
+      {"name": "htmlmaker_postprocessing"},
+      {"name": "cacert"},
+      {"name": "bookmaker_titlepage"},
+      {"name": "metadata_preprocessing"},
+      {"name": "filearchive"},
+      {"name": "filearchive_postprocessing"},
+      {"name": "imagechecker"},
+      {"name": "imagechecker_postprocessing"},
+      {"name": "cacert"},
+      {"name": "bookmaker_covermaker"},
+      {"name": "coverchecker"},
+      {"name": "stylesheets_preprocessing"},
+      {"name": "stylesheets"},
+      {"name": "stylesheets_postprocessing"},
+      {"name": "epubmaker_preprocessing"},
+      {"name": "epubmaker"},
+      {"name": "epubmaker_postprocessing"},
+      {"name": "cleanup_preprocessing"},
+      {"name": "cleanup"}
+    ],
+    "processwatch": true,
+    "statuscheck": false
+    },
+    {
     "name": "workflows_status.bat",
     "scripts": [
       {"name": "tmparchive"},
