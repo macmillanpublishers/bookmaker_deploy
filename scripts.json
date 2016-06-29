@@ -475,8 +475,8 @@
       {"name": "epubmaker"},
       {"name": "epubmaker_postprocessing"},
       {"name": "cleanup_preprocessing"},
-      {"name": "cleanup"},
-      {"name": "deploy_posts"}
+      {"name": "deploy_posts"},      
+      {"name": "cleanup"}
     ],
     "processwatch": true,
     "statuscheck": false
