@@ -207,6 +207,14 @@
     "location": "S:\\resources\\bookmaker_scripts\\covermaker\\bookmaker_titlepage.rb",
     "argv": "'%1' ",
     "testvalue": "titlepage"
+    },
+    {
+    "name": "deploy_posts",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "S:\\resources\\bookmaker_scripts\\bookmaker_validator\\deploy_posts.rb",
+    "argv": "'%1' ",
+    "testvalue": "validator_posts"
     }
   ],
   "projects" : [
@@ -467,7 +475,8 @@
       {"name": "epubmaker"},
       {"name": "epubmaker_postprocessing"},
       {"name": "cleanup_preprocessing"},
-      {"name": "cleanup"}
+      {"name": "cleanup"},
+      {"name": "deploy_posts"}
     ],
     "processwatch": true,
     "statuscheck": false
