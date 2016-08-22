@@ -153,6 +153,14 @@
     "testvalue": "epubmaker"
     },
     {
+    "name": "epubmaker_htmlexcerpt",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRADDONS\\epubmaker_htmlexcerpt.rb",
+    "argv": "'%1' ",
+    "testvalue": "epubmaker_htmlexcerpt"
+    },
+    {
     "name": "epubmaker_postprocessing",
     "filetype": "rb",
     "command": "RUBYCMD",
@@ -483,6 +491,7 @@
       {"name": "stylesheets_postprocessing"},
       {"name": "epubmaker_preprocessing"},
       {"name": "epubmaker"},
+      {"name": "epubmaker_htmlexcerpt"},
       {"name": "epubmaker_postprocessing"},
       {"name": "cleanup_preprocessing"},
       {"name": "deploy_posts"},      
