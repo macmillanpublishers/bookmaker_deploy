@@ -534,7 +534,6 @@
       {"name": "stylesheets_postprocessing"},
       {"name": "epubmaker_preprocessing"},
       {"name": "epubmaker"},
-      {"name": "epubmaker_htmlexcerpt"},
       {"name": "epubmaker_postprocessing"},
       {"name": "cleanup_preprocessing"},
       {"name": "deploy_posts"},      
