@@ -1,7 +1,25 @@
 @echo off
+rem strip out single quotes and extra periods from new files
+Setlocal
+for %%a in (%1) do set filename=%%~nxa
+for %%a in (%1) do set filepath=%%~dpa
+set name_test=%filename:'=%
+if "%name_test:~-4%" == ".doc" (
+set basename=%name_test:~0,-4%
+set ext=.doc)
+if "%name_test:~-5%" == ".docx" (
+set basename=%name_test:~0,-5%
+set ext=.docx)
+set basename=%basename:.=%
+set "newname=%basename%%ext%"
+if NOT "%newname%" == "%filename%" (
+echo "bad characters found, renaming file"
+ren %1 "%newname%")
+set "infile="%filepath%%newname%""
+) else (set infile=%1)
 
 rem get folder names for logging directories
-set INPUT=%1
+set INPUT=%infile%
 for %%f in (%INPUT%) do set currfolder=%%~dpf
 set LOGDIR1=%currfolder:~0,-1%
 for %%f in ("%LOGDIR1%") do set logfolder=%%~dpf

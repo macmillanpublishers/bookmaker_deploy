@@ -1,7 +1,25 @@
 @echo off
+rem strip out single quotes and extra periods from new files
+Setlocal
+for %%a in (%1) do set filename=%%~nxa
+for %%a in (%1) do set filepath=%%~dpa
+set name_test=%filename:'=%
+if "%name_test:~-4%" == ".doc" (
+set basename=%name_test:~0,-4%
+set ext=.doc)
+if "%name_test:~-5%" == ".docx" (
+set basename=%name_test:~0,-5%
+set ext=.docx)
+set basename=%basename:.=%
+set "newname=%basename%%ext%"
+if NOT "%newname%" == "%filename%" (
+echo "bad characters found, renaming file"
+ren %1 "%newname%")
+set "infile="%filepath%%newname%""
+) else (set infile=%1)
 
 rem get folder names for logging directories
-set INPUT=%1
+set INPUT=%infile%
 for %%f in (%INPUT%) do set currfolder=%%~dpf
 set LOGDIR1=%currfolder:~0,-1%
 for %%f in ("%LOGDIR1%") do set logfolder=%%~dpf
@@ -60,41 +78,41 @@ rem write scriptnames to file for ProcessLogger to rm on success:
 @echo on
 @echo %date% %time% >> %logfile% 2>&1
 
-start /b PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bookmaker_scripts\utilities\processwatch.ps1 %p_log% '%1'"
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\tmparchive\tmparchive.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger tmparchive
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\htmlmaker_preprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker_preprocessing
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\htmlmaker\htmlmaker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\htmlmaker_postprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker_postprocessing
+start /b PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bookmaker_scripts\utilities\processwatch.ps1 %p_log% '%infile%'"
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\tmparchive\tmparchive.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger tmparchive
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\htmlmaker_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker_preprocessing
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\htmlmaker\htmlmaker.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\htmlmaker_postprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker_postprocessing
 SET SSL_CERT_FILE=C:\Ruby193\lib\ruby\site_ruby\1.9.1\rubygems\ssl_certs\cacert.pem >> %logfile% 2>&1 && call :ProcessLogger cacert
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\covermaker\bookmaker_titlepage.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger titlepage
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\metadata_preprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger metadata_preprocessing
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\filearchive\filearchive.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger filearchive
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\filearchive_postprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger filearchive_postprocessing
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\imagechecker\imagechecker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger imagechecker
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\imagechecker_postprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger imagechecker_postprocessing
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\covermaker\bookmaker_titlepage.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger titlepage
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\metadata_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger metadata_preprocessing
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\filearchive\filearchive.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger filearchive
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\filearchive_postprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger filearchive_postprocessing
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\imagechecker\imagechecker.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger imagechecker
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\imagechecker_postprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger imagechecker_postprocessing
 SET SSL_CERT_FILE=C:\Ruby193\lib\ruby\site_ruby\1.9.1\rubygems\ssl_certs\cacert.pem >> %logfile% 2>&1 && call :ProcessLogger cacert
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\covermaker\bookmaker_covermaker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger covermaker
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\coverchecker\coverchecker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger coverchecker
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\stylesheets_preprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger stylesheets_preprocessing
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\stylesheets\stylesheets.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger stylesheets
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\stylesheets_postprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger stylesheets_postprocessing
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\pdfmaker_preprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger pdfmaker_preprocessing
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\covermaker\bookmaker_covermaker.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger covermaker
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\coverchecker\coverchecker.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger coverchecker
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\stylesheets_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger stylesheets_preprocessing
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\stylesheets\stylesheets.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger stylesheets
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\stylesheets_postprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger stylesheets_postprocessing
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\pdfmaker_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger pdfmaker_preprocessing
 SET SSL_CERT_FILE=C:\Ruby193\lib\ruby\site_ruby\1.9.1\rubygems\ssl_certs\cacert.pem >> %logfile% 2>&1 && call :ProcessLogger cacert
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\pdfmaker\pdfmaker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger pdfmaker
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\pitstop_watch\torDOTcom_pitstop_input.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger torDOTcom_pitstop_input
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\epubmaker_preprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger epubmaker_preprocessing
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\epubmaker\epubmaker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger epubmaker
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\epubmaker_postprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger epubmaker_postprocessing
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\pitstop_watch\torDOTcom_pitstop_output.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger torDOTcom_pitstop_output
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\cleanup_preprocessing.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger cleanup_preprocessing
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\cleanup\cleanup.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger cleanup
-PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bookmaker_scripts\utilities\mail-alert.ps1 '%1'" && call :ProcessLogger mail-alert
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\pdfmaker\pdfmaker.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger pdfmaker
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\pitstop_watch\torDOTcom_pitstop_input.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger torDOTcom_pitstop_input
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\epubmaker_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger epubmaker_preprocessing
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\epubmaker\epubmaker.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger epubmaker
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\epubmaker_postprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger epubmaker_postprocessing
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\pitstop_watch\torDOTcom_pitstop_output.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger torDOTcom_pitstop_output
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\cleanup_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger cleanup_preprocessing
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\cleanup\cleanup.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger cleanup
+PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bookmaker_scripts\utilities\mail-alert.ps1 '%infile%'" && call :ProcessLogger mail-alert
 
 
 goto:eof
 rem ************  Function *************
 :ProcessLogger
-set input=%1
-findstr /v %1 %p_log% > %p_log_tmp%
+set input=%infile%
+findstr /v %infile% %p_log% > %p_log_tmp%
 move /Y %p_log_tmp% %p_log%
 goto :eof

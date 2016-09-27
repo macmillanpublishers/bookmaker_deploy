@@ -5,7 +5,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRCORE\\tmparchive\\tmparchive.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "tmparchive"
     },
     {
@@ -13,7 +13,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRADDONS\\htmlmaker_preprocessing.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "htmlmaker_preprocessing"
     },
     {
@@ -21,7 +21,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRCORE\\htmlmaker\\htmlmaker.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "htmlmaker"
     },
      {
@@ -29,7 +29,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRADDONS\\metadata_preprocessing.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "metadata_preprocessing"
     },
     {
@@ -37,7 +37,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRADDONS\\htmlmaker_postprocessing.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "htmlmaker_postprocessing"
     },
     {
@@ -45,7 +45,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRCORE\\filearchive\\filearchive.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "filearchive"
     },
     {
@@ -53,7 +53,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRADDONS\\filearchive_postprocessing.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "filearchive_postprocessing"
     },
     {
@@ -61,7 +61,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRCORE\\imagechecker\\imagechecker.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "imagechecker"
     },
     {
@@ -69,7 +69,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRADDONS\\imagechecker_postprocessing.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "imagechecker_postprocessing"
     },
     {
@@ -77,7 +77,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRCORE\\coverchecker\\coverchecker.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "coverchecker"
     },
     {
@@ -85,7 +85,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRADDONS\\stylesheets_preprocessing.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "stylesheets_preprocessing"
     },
     {
@@ -93,7 +93,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRCORE\\stylesheets\\stylesheets.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "stylesheets"
     },
     {
@@ -101,7 +101,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRADDONS\\stylesheets_postprocessing.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "stylesheets_postprocessing"
     },
     {
@@ -109,7 +109,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRADDONS\\pdfmaker_preprocessing.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "pdfmaker_preprocessing"
     },
     {
@@ -125,7 +125,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRCORE\\pdfmaker\\pdfmaker.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "pdfmaker"
     },
     {
@@ -133,7 +133,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "PITSTOP\\torDOTcom_pitstop_input.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "torDOTcom_pitstop_input"
     },
     {
@@ -141,7 +141,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRADDONS\\epubmaker_preprocessing.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "epubmaker_preprocessing"
     },
     {
@@ -149,7 +149,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRCORE\\epubmaker\\epubmaker.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "epubmaker"
     },
     {
@@ -157,7 +157,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRADDONS\\epubmaker_htmlexcerpt.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "epubmaker_htmlexcerpt"
     },
     {
@@ -165,7 +165,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRADDONS\\epubmaker_postprocessing.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "epubmaker_postprocessing"
     },
     {
@@ -173,7 +173,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "PITSTOP\\torDOTcom_pitstop_output.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "torDOTcom_pitstop_output"
     },
     {
@@ -181,7 +181,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRADDONS\\bookmaker_tests.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "bookmaker_tests"
     },
     {
@@ -189,7 +189,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRADDONS\\cleanup_preprocessing.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "cleanup_preprocessing"
     },
     {
@@ -197,7 +197,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRCORE\\cleanup\\cleanup.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "cleanup"
     },
     {
@@ -205,7 +205,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "S:\\resources\\bookmaker_scripts\\covermaker\\bookmaker_covermaker.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "covermaker"
     },
     {
@@ -213,7 +213,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "S:\\resources\\bookmaker_scripts\\covermaker\\bookmaker_samplecover.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "samplecover"
     },
     {
@@ -221,7 +221,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "S:\\resources\\bookmaker_scripts\\covermaker\\bookmaker_titlepage.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "titlepage"
     },
     {
@@ -229,7 +229,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "S:\\resources\\bookmaker_scripts\\bookmaker_validator\\deploy_posts.rb",
-    "argv": "'%1' ",
+    "argv": "'%infile%' ",
     "testvalue": "validator_posts"
     }
   ],
