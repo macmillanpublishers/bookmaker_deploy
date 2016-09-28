@@ -19,9 +19,6 @@ set "infile=""%filepath%%newname%"""
 set "infile=!infile:""="!"
 ) else (set infile=%1)
 
-echo %infile%
-echo !infile!
-
 rem get folder names for logging directories
 set INPUT=%infile%
 for %%f in (%INPUT%) do set currfolder=%%~dpf
@@ -34,7 +31,6 @@ set logfolder3=%logfolder2:~0,-1%
 for %%f in ("%logfolder3%") do set logsubfolder=%%~nxf
 for %%f in ("%logfolder3%") do set logfolder=%%~dpf
 set logfolder=%logfolder:~0,-1%
-
 
 if not exist "%logfolder%\bookmaker_logs\%logsubfolder%" mkdir "%logfolder%\bookmaker_logs\%logsubfolder%"
 if not exist "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%" mkdir "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%"
@@ -72,7 +68,7 @@ rem write scriptnames to file for ProcessLogger to rm on success:
   echo cleanup_preprocessing
   echo cleanup
 	echo mail-alert
-
+	
 ) >%p_log%
 
 @echo on

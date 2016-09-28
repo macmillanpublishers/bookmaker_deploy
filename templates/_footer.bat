@@ -4,7 +4,7 @@ REM STATUSHERE
 goto:eof
 rem ************  Function *************
 :ProcessLogger
-set input=%infile%
-findstr /v %infile% %p_log% > %p_log_tmp%
+set input=%1
+findstr /v %1 %p_log% > %p_log_tmp%
 move /Y %p_log_tmp% %p_log%
 goto :eof
