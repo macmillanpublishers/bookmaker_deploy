@@ -41,6 +41,14 @@
     "testvalue": "htmlmaker_postprocessing"
     },
     {
+    "name": "egalleymaker_htmlmaker_postprocessing",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRADDONS\\egalleymaker_htmlmaker_postprocessing.rb",
+    "argv": "'%infile%' ",
+    "testvalue": "egalleymaker_htmlmaker_postprocessing"
+    },
+    {
     "name": "filearchive",
     "filetype": "rb",
     "command": "RUBYCMD",
@@ -519,6 +527,7 @@
       {"name": "htmlmaker_preprocessing"},
       {"name": "htmlmaker"},
       {"name": "htmlmaker_postprocessing"},
+      {"name": "egalleymaker_htmlmaker_postprocessing"},
       {"name": "cacert"},
       {"name": "bookmaker_titlepage"},
       {"name": "metadata_preprocessing"},
