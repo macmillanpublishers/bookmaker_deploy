@@ -82,7 +82,7 @@ deploy_hash['projects'].each do |p|
     footer = ""
   end
 
-  statusline = "C:\\Ruby193\\bin\\ruby.exe S:\\resources\\bookmaker_scripts\\utilities\\bookmaker_status_checker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger status_check"
+  statusline = "#{rubycmd} S:\\resources\\bookmaker_scripts\\utilities\\bookmaker_status_checker.rb '%1' >> %logfile% 2>&1 && call :ProcessLogger status_check"
 
   if p['statuscheck'] == true
     footer = footer.gsub(/REM STATUSHERE/,statusline)
