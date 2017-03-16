@@ -1,17 +1,15 @@
 @echo off
 rem strip out single quotes and extra periods from new files
 Setlocal EnableDelayedExpansion
-for %%a in (%1) do set init_fname=%%~nxa
-for %%a in (%1) do set filepath=%%~dpa
+for %%a in (%1) do (set init_fname=%%~nxa)
+for %%a in (%1) do (set filepath=%%~dpa)
 set name_test=%init_fname:'=%
-if "%name_test:~-4%" == ".doc" (
-set basename=%name_test:~0,-4%
-set ext=.doc)
-if "%name_test:~-5%" == ".docx" (
-set basename=%name_test:~0,-5%
-set ext=.docx)
+set name_test=!name_test:^(=!
+set name_test=!name_test:^)=!
+for %%a in ("!name_test!") do (set basename=%%~na)
+for %%a in (!name_test!) do (set extension=%%~xa)
 set basename=%basename:.=%
-set "newname=%basename%%ext%"
+set "newname=!basename!%extension%"
 if NOT "%newname%" == "%init_fname%" (
 echo "bad characters found, renaming file"
 ren %1 "%newname%"
