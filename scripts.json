@@ -244,7 +244,7 @@
     "name": "send_to_coresource",
     "filetype": "rb",
     "command": "RUBYCMD",
-    "location": "S:\\resources\\bookmaker_scripts\\bookmaker_connectors\\send_to_coresource.rb",
+    "location": "S:\\resources\\bookmaker_scripts\\bookmaker_connectors\\epub_to_coresourceSend.rb",
     "argv": "'%infile%' ",
     "testvalue": "coresource"
     }
@@ -553,9 +553,9 @@
       {"name": "epubmaker"},
       {"name": "epubmaker_postprocessing"},
       {"name": "cleanup_preprocessing"},
+      {"name": "send_to_coresource"},
       {"name": "deploy_posts"},      
-      {"name": "cleanup"},
-      {"name": "send_to_coresource"}
+      {"name": "cleanup"}
     ],
     "processwatch": true,
     "statuscheck": false
