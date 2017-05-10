@@ -239,6 +239,14 @@
     "location": "S:\\resources\\bookmaker_scripts\\bookmaker_validator\\deploy_posts.rb",
     "argv": "'%infile%' ",
     "testvalue": "validator_posts"
+    },
+    {
+    "name": "send_to_coresource",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "S:\\resources\\bookmaker_scripts\\bookmaker_connectors\\send_to_coresource.rb",
+    "argv": "'%infile%' ",
+    "testvalue": "coresource"
     }
   ],
   "projects" : [
@@ -546,7 +554,8 @@
       {"name": "epubmaker_postprocessing"},
       {"name": "cleanup_preprocessing"},
       {"name": "deploy_posts"},      
-      {"name": "cleanup"}
+      {"name": "cleanup"},
+      {"name": "send_to_coresource"}
     ],
     "processwatch": true,
     "statuscheck": false
