@@ -241,12 +241,12 @@
     "testvalue": "validator_posts"
     },
     {
-    "name": "send_to_coresource",
+    "name": "egalley_distribute",
     "filetype": "rb",
     "command": "RUBYCMD",
-    "location": "S:\\resources\\bookmaker_scripts\\bookmaker_connectors\\epub_to_coresourceSend.rb",
+    "location": "S:\\resources\\bookmaker_scripts\\bookmaker_connectors\\egalley_distribute.rb",
     "argv": "'%infile%' ",
-    "testvalue": "coresource"
+    "testvalue": "egalley_distribute"
     }
   ],
   "projects" : [
@@ -553,7 +553,7 @@
       {"name": "epubmaker"},
       {"name": "epubmaker_postprocessing"},
       {"name": "cleanup_preprocessing"},
-      {"name": "send_to_coresource"},
+      {"name": "egalley_distribute"},
       {"name": "deploy_posts"},
       {"name": "cleanup"}
     ],
