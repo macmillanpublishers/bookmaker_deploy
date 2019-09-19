@@ -473,7 +473,7 @@
     "statuscheck": false
     },
     {
-    "name": "rsuite_bookmaker_FIRSTPASS.bat",
+    "name": "rs_to_bkmkr.bat",
     "scripts": [
       {"name": "tmparchive_rsuite"},
       {"name": "htmlmaker_preprocessing"},
