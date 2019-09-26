@@ -43,6 +43,7 @@ For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set mydate=%%c-%%a-%%b)
 For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a%%b)
 set p_log="S:\resources\logs\processLogs\%basename%_%mydate%-%mytime%_%projectfolder%.txt"
 set p_log_tmp="S:\resources\logs\processLogs\%basename%_%mydate%-%mytime%_%projectfolder%Tmp.txt"
+if exist "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\%logfilename%-stdout-and-err.txt" move "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\%logfilename%-stdout-and-err.txt" "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\past\%logfilename%-stdout-and-err_ARCHIVED_%mydate%-%mytime%.txt"
 
 rem write scriptnames to file for ProcessLogger to rm on success:
 (
