@@ -13,7 +13,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRCORE\\tmparchive\\tmparchive_rsuite.rb",
-    "argv": "'%infile%' '%2'",
+    "argv": "'%infile%' '%2' '%3'",
     "testvalue": "tmparchive_rsuite"
     },
     {
@@ -255,6 +255,14 @@
     "location": "S:\\resources\\bookmaker_scripts\\bookmaker_connectors\\egalley_distribute.rb",
     "argv": "'%infile%' ",
     "testvalue": "egalley_distribute"
+    },
+    {
+    "name": "bookmaker_to_rsuite",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "S:\\resources\\bookmaker_scripts\\bookmaker_connectors\\bookmaker_to_rsuite.rb",
+    "argv": "'%infile%' ",
+    "testvalue": "bookmaker_to_rsuite"
     }
   ],
   "projects" : [
@@ -499,6 +507,7 @@
       {"name": "epubmaker_postprocessing"},
       {"name": "torDOTcom_pitstop_output"},
       {"name": "cleanup_preprocessing"},
+      {"name": "bookmaker_to_rsuite"},
       {"name": "cleanup"}
     ],
     "processwatch": true,
