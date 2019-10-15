@@ -9,6 +9,14 @@
     "testvalue": "tmparchive"
     },
     {
+    "name": "tmparchive_rsuite",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRCORE\\tmparchive\\tmparchive_rsuite.rb",
+    "argv": "'%infile%' '%2' '%3'",
+    "testvalue": "tmparchive_rsuite"
+    },
+    {
     "name": "htmlmaker_preprocessing",
     "filetype": "rb",
     "command": "RUBYCMD",
@@ -247,6 +255,14 @@
     "location": "S:\\resources\\bookmaker_scripts\\bookmaker_connectors\\egalley_distribute.rb",
     "argv": "'%infile%' ",
     "testvalue": "egalley_distribute"
+    },
+    {
+    "name": "bookmaker_to_rsuite",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "S:\\resources\\bookmaker_scripts\\bookmaker_connectors\\bookmaker_to_rsuite.rb",
+    "argv": "'%infile%' ",
+    "testvalue": "bookmaker_to_rsuite"
     }
   ],
   "projects" : [
@@ -459,6 +475,39 @@
       {"name": "epubmaker_postprocessing"},
       {"name": "torDOTcom_pitstop_output"},
       {"name": "cleanup_preprocessing"},
+      {"name": "cleanup"}
+    ],
+    "processwatch": true,
+    "statuscheck": false
+    },
+    {
+    "name": "rs_to_bkmkr.bat",
+    "header": "_header-rsuite.bat",
+    "scripts": [
+      {"name": "tmparchive_rsuite"},
+      {"name": "htmlmaker_preprocessing"},
+      {"name": "htmlmaker"},
+      {"name": "htmlmaker_postprocessing"},
+      {"name": "bookmaker_titlepage"},
+      {"name": "metadata_preprocessing"},
+      {"name": "filearchive"},
+      {"name": "filearchive_postprocessing"},
+      {"name": "imagechecker"},
+      {"name": "imagechecker_postprocessing"},
+      {"name": "bookmaker_covermaker"},
+      {"name": "coverchecker"},
+      {"name": "stylesheets_preprocessing"},
+      {"name": "stylesheets"},
+      {"name": "stylesheets_postprocessing"},
+      {"name": "pdfmaker_preprocessing"},
+      {"name": "pdfmaker"},
+      {"name": "torDOTcom_pitstop_input"},
+      {"name": "epubmaker_preprocessing"},
+      {"name": "epubmaker"},
+      {"name": "epubmaker_postprocessing"},
+      {"name": "torDOTcom_pitstop_output"},
+      {"name": "cleanup_preprocessing"},
+      {"name": "bookmaker_to_rsuite"},
       {"name": "cleanup"}
     ],
     "processwatch": true,

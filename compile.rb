@@ -13,7 +13,8 @@ deploy_hash = JSON.parse(json)
 # figure out which addon files to apply
 projects = []
 
-headerfile = File.join(scripts_dir, "bookmaker_deploy", "templates", "_header.bat")
+templatesdir = File.join(scripts_dir, "bookmaker_deploy", "templates")
+default_header = File.join(scripts_dir, "bookmaker_deploy", "templates", "_header.bat")
 midfile = File.join(scripts_dir, "bookmaker_deploy", "templates", "_mid.bat")
 footerfile = File.join(scripts_dir, "bookmaker_deploy", "templates", "_footer.bat")
 loggerline = ">> %logfile% 2>&1 && call :ProcessLogger"
@@ -27,7 +28,12 @@ deploy_hash['projects'].each do |p|
   filename = p['name']
   filepath = File.join(scripts_dir, "bookmaker_deploy", "#{filename}")
 
-  header = File.read(headerfile)
+  if p.key?("header")
+    alt_header_path = File.join(templatesdir, p['header'])
+    header = File.read(alt_header_path)
+  else
+    header = File.read(default_header)
+  end
   mid = File.read(midfile)
   footer = File.read(footerfile)
 
