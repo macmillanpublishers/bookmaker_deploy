@@ -270,7 +270,7 @@
     "command": "RUBYCMD",
     "location": "S:\\resources\\bookmaker_scripts\\bookmaker_addons\\bookmaker_mailer.rb",
     "argv": "'%infile%' ",
-    "testvalue": "bookmaker_to_rsuite"
+    "testvalue": "bookmaker_mailer"
     }
   ],
   "projects" : [
