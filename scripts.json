@@ -263,6 +263,14 @@
     "location": "S:\\resources\\bookmaker_scripts\\bookmaker_connectors\\bookmaker_to_rsuite.rb",
     "argv": "'%infile%' ",
     "testvalue": "bookmaker_to_rsuite"
+    },
+    {
+    "name": "bookmaker_mailer",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "S:\\resources\\bookmaker_scripts\\bookmaker_addons\\bookmaker_mailer.rb",
+    "argv": "'%infile%' ",
+    "testvalue": "bookmaker_to_rsuite"
     }
   ],
   "projects" : [
@@ -508,6 +516,7 @@
       {"name": "torDOTcom_pitstop_output"},
       {"name": "cleanup_preprocessing"},
       {"name": "bookmaker_to_rsuite"},
+      {"name": "bookmaker_mailer"},
       {"name": "cleanup"}
     ],
     "processwatch": true,
