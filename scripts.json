@@ -17,6 +17,14 @@
     "testvalue": "tmparchive_rsuite"
     },
     {
+    "name": "tmparchive_direct",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRCORE\\tmparchive\\tmparchive_direct.rb",
+    "argv": "'%infile%' '%2' '%3' '%4'",
+    "testvalue": "tmparchive_direct"
+    },
+    {
     "name": "htmlmaker_preprocessing",
     "filetype": "rb",
     "command": "RUBYCMD",
@@ -490,9 +498,43 @@
     },
     {
     "name": "rs_to_bkmkr.bat",
-    "header": "_header-rsuite.bat",
+    "header": "_header-extra_params.bat",
     "scripts": [
       {"name": "tmparchive_rsuite"},
+      {"name": "htmlmaker_preprocessing"},
+      {"name": "htmlmaker"},
+      {"name": "htmlmaker_postprocessing"},
+      {"name": "bookmaker_titlepage"},
+      {"name": "metadata_preprocessing"},
+      {"name": "filearchive"},
+      {"name": "filearchive_postprocessing"},
+      {"name": "imagechecker"},
+      {"name": "imagechecker_postprocessing"},
+      {"name": "bookmaker_covermaker"},
+      {"name": "coverchecker"},
+      {"name": "stylesheets_preprocessing"},
+      {"name": "stylesheets"},
+      {"name": "stylesheets_postprocessing"},
+      {"name": "pdfmaker_preprocessing"},
+      {"name": "pdfmaker"},
+      {"name": "torDOTcom_pitstop_input"},
+      {"name": "epubmaker_preprocessing"},
+      {"name": "epubmaker"},
+      {"name": "epubmaker_postprocessing"},
+      {"name": "torDOTcom_pitstop_output"},
+      {"name": "cleanup_preprocessing"},
+      {"name": "bookmaker_to_rsuite"},
+      {"name": "bookmaker_mailer"},
+      {"name": "cleanup"}
+    ],
+    "processwatch": true,
+    "statuscheck": false
+    },
+    {
+    "name": "bookmaker_direct.bat",
+    "header": "_header-extra_params.bat",
+    "scripts": [
+      {"name": "tmparchive_direct"},
       {"name": "htmlmaker_preprocessing"},
       {"name": "htmlmaker"},
       {"name": "htmlmaker_postprocessing"},
