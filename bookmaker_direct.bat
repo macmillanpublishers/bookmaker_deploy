@@ -70,7 +70,7 @@ rem write scriptnames to file for ProcessLogger to rm on success:
   echo epubmaker_postprocessing
   echo torDOTcom_pitstop_output
   echo cleanup_preprocessing
-  echo bookmaker_to_rsuite
+  echo bookmaker-direct_return
   echo bookmaker_mailer
   echo cleanup
 	echo mail-alert
@@ -104,7 +104,7 @@ C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\epubmaker\
 C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\epubmaker_postprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger epubmaker_postprocessing
 C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\pitstop_watch\torDOTcom_pitstop_output.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger torDOTcom_pitstop_output
 C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\cleanup_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger cleanup_preprocessing
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_connectors\bookmaker_to_rsuite.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger bookmaker_to_rsuite
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_connectors\bookmaker-direct_return.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger bookmaker-direct_return
 C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\bookmaker_mailer.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger bookmaker_mailer
 C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\cleanup\cleanup.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger cleanup
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bookmaker_scripts\utilities\mail-alert.ps1 '%infile%'" && call :ProcessLogger mail-alert

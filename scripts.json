@@ -273,6 +273,14 @@
     "testvalue": "bookmaker_to_rsuite"
     },
     {
+    "name": "bookmaker-direct_return",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "S:\\resources\\bookmaker_scripts\\bookmaker_connectors\\bookmaker-direct_return.rb",
+    "argv": "'%infile%' ",
+    "testvalue": "bookmaker-direct_return"
+    },
+    {
     "name": "bookmaker_mailer",
     "filetype": "rb",
     "command": "RUBYCMD",
@@ -557,7 +565,7 @@
       {"name": "epubmaker_postprocessing"},
       {"name": "torDOTcom_pitstop_output"},
       {"name": "cleanup_preprocessing"},
-      {"name": "bookmaker_to_rsuite"},
+      {"name": "bookmaker-direct_return"},
       {"name": "bookmaker_mailer"},
       {"name": "cleanup"}
     ],
