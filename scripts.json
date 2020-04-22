@@ -671,6 +671,39 @@
     "statuscheck": false
     },
     {
+    "name": "automated_EGALLEY_direct.bat",
+    "scripts": [
+      {"name": "tmparchive_direct"},
+      {"name": "htmlmaker_preprocessing"},
+      {"name": "htmlmaker"},
+      {"name": "htmlmaker_postprocessing"},
+      {"name": "egalleymaker_htmlmaker_postprocessing"},
+      {"name": "cacert"},
+      {"name": "bookmaker_titlepage"},
+      {"name": "metadata_preprocessing"},
+      {"name": "filearchive"},
+      {"name": "filearchive_postprocessing"},
+      {"name": "imagechecker"},
+      {"name": "imagechecker_postprocessing"},
+      {"name": "cacert"},
+      {"name": "bookmaker_covermaker"},
+      {"name": "coverchecker"},
+      {"name": "stylesheets_preprocessing"},
+      {"name": "stylesheets"},
+      {"name": "stylesheets_postprocessing"},
+      {"name": "epubmaker_preprocessing"},
+      {"name": "epubmaker"},
+      {"name": "epubmaker_postprocessing"},
+      {"name": "cleanup_preprocessing"},
+      {"name": "egalley_distribute"},
+      {"name": "deploy_posts"},
+      {"name": "cleanup"}
+    ],
+    "processwatch": true,
+    "statuscheck": false,
+    "extra_argv": "'%2' '%3' '%4' "
+    },
+    {
     "name": "workflows_status.bat",
     "scripts": [
       {"name": "tmparchive"},

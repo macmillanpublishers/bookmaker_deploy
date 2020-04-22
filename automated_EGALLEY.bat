@@ -72,7 +72,7 @@ rem write scriptnames to file for ProcessLogger to rm on success:
   echo validator_posts
   echo cleanup
 	echo mail-alert
-
+	
 ) >%p_log%
 
 @echo on
