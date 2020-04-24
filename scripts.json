@@ -13,7 +13,7 @@
     "filetype": "rb",
     "command": "RUBYCMD",
     "location": "BKMKRCORE\\tmparchive\\tmparchive_rsuite.rb",
-    "argv": "'%infile%' '%2' '%3'",
+    "argv": "'%infile%' ",
     "testvalue": "tmparchive_rsuite"
     },
     {
@@ -672,6 +672,7 @@
     },
     {
     "name": "automated_EGALLEY_direct.bat",
+    "header": "_header-extra_params.bat",
     "scripts": [
       {"name": "tmparchive_direct"},
       {"name": "htmlmaker_preprocessing"},

@@ -2,7 +2,6 @@
 rem strip single quotes, parentheses, exclamation pts, and extra periods from filenames
 for %%a in (%1) do (set init_fname=%%~nxa)
 for %%a in (%1) do (set filepath=%%~dpa)
-for %%a in (%2) do (set logfilename=%%~nxa)
 set name_test=%init_fname:!=%
 Setlocal EnableDelayedExpansion
 set name_test=!name_test:'=!
@@ -37,13 +36,13 @@ set logfolder=%logfolder:~0,-1%
 if not exist "%logfolder%\bookmaker_logs\%logsubfolder%" mkdir "%logfolder%\bookmaker_logs\%logsubfolder%"
 if not exist "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%" mkdir "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%"
 if not exist "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\past" mkdir "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\past"
-set logfile="%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\%logfilename%-stdout-and-err.txt"
+set logfile="%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\%basename%-stdout-and-err.txt"
 if not exist "S:\resources\logs\processLogs" mkdir "S:\resources\logs\processLogs"
 For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set mydate=%%c-%%a-%%b)
 For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a%%b)
 set p_log="S:\resources\logs\processLogs\%basename%_%mydate%-%mytime%_%projectfolder%.txt"
 set p_log_tmp="S:\resources\logs\processLogs\%basename%_%mydate%-%mytime%_%projectfolder%Tmp.txt"
-if exist "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\%logfilename%-stdout-and-err.txt" move "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\%logfilename%-stdout-and-err.txt" "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\past\%logfilename%-stdout-and-err_ARCHIVED_%mydate%-%mytime%.txt"
+if exist "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\%basename%-stdout-and-err.txt" move "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\%basename%-stdout-and-err.txt" "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\past\%basename%-stdout-and-err_ARCHIVED_%mydate%-%mytime%.txt"
 
 rem write scriptnames to file for ProcessLogger to rm on success:
 (
@@ -81,7 +80,7 @@ rem write scriptnames to file for ProcessLogger to rm on success:
 @echo %date% %time% >> %logfile% 2>&1
 
 start /b PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bookmaker_scripts\utilities\processwatch.ps1 %p_log% '%infile%'"
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\tmparchive\tmparchive_rsuite.rb '%infile%' '%2' '%3''%2' '%3' >> %logfile% 2>&1 && call :ProcessLogger tmparchive_rsuite
+C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\tmparchive\tmparchive_rsuite.rb '%infile%' '%2' '%3' >> %logfile% 2>&1 && call :ProcessLogger tmparchive_rsuite
 C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\htmlmaker_preprocessing.rb '%infile%' '%2' '%3' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker_preprocessing
 C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\htmlmaker\htmlmaker.rb '%infile%' '%2' '%3' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker
 C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\htmlmaker_postprocessing.rb '%infile%' '%2' '%3' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker_postprocessing
