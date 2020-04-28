@@ -36,7 +36,10 @@ set logfolder=%logfolder:~0,-1%
 if not exist "%logfolder%\bookmaker_logs\%logsubfolder%" mkdir "%logfolder%\bookmaker_logs\%logsubfolder%"
 if not exist "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%" mkdir "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%"
 if not exist "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\past" mkdir "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\past"
-set logfile="%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\%basename%-stdout-and-err.txt"
+REM set stdout/stderr logfile path
+for %%a in (%infile%) do for %%b in ("%%~dpa\.") do set "inputdirname=%%~nxb"
+set logfile="%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\%inputdirname%-stdout-and-err.txt"
+REM setup processlog paths
 if not exist "S:\resources\logs\processLogs" mkdir "S:\resources\logs\processLogs"
 For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set mydate=%%c-%%a-%%b)
 For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a%%b)
