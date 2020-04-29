@@ -2,7 +2,6 @@
 rem strip single quotes, parentheses, exclamation pts, and extra periods from filenames
 for %%a in (%1) do (set init_fname=%%~nxa)
 for %%a in (%1) do (set filepath=%%~dpa)
-for %%a in (%2) do (set logfilename=%%~nxa)
 set name_test=%init_fname:!=%
 Setlocal EnableDelayedExpansion
 set name_test=!name_test:'=!
@@ -37,13 +36,16 @@ set logfolder=%logfolder:~0,-1%
 if not exist "%logfolder%\bookmaker_logs\%logsubfolder%" mkdir "%logfolder%\bookmaker_logs\%logsubfolder%"
 if not exist "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%" mkdir "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%"
 if not exist "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\past" mkdir "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\past"
-set logfile="%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\%logfilename%-stdout-and-err.txt"
+REM set stdout/stderr logfile path
+for %%a in (%infile%) do for %%b in ("%%~dpa\.") do set "inputdirname=%%~nxb"
+set logfile="%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\%inputdirname%-stdout-and-err.txt"
+REM setup processlog paths
 if not exist "S:\resources\logs\processLogs" mkdir "S:\resources\logs\processLogs"
 For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set mydate=%%c-%%a-%%b)
 For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a%%b)
 set p_log="S:\resources\logs\processLogs\%basename%_%mydate%-%mytime%_%projectfolder%.txt"
 set p_log_tmp="S:\resources\logs\processLogs\%basename%_%mydate%-%mytime%_%projectfolder%Tmp.txt"
-if exist "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\%logfilename%-stdout-and-err.txt" move "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\%logfilename%-stdout-and-err.txt" "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\past\%logfilename%-stdout-and-err_ARCHIVED_%mydate%-%mytime%.txt"
+if exist "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\%basename%-stdout-and-err.txt" move "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\%basename%-stdout-and-err.txt" "%logfolder%\bookmaker_logs\%logsubfolder%\%projectfolder%\past\%basename%-stdout-and-err_ARCHIVED_%mydate%-%mytime%.txt"
 
 rem write scriptnames to file for ProcessLogger to rm on success:
 (

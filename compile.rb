@@ -28,6 +28,12 @@ deploy_hash['projects'].each do |p|
   filename = p['name']
   filepath = File.join(scripts_dir, "bookmaker_deploy", "#{filename}")
 
+  if p.key?("extra_argv")
+    p_extra_args = p['extra_argv']
+  else
+    p_extra_args = ''
+  end
+
   if p.key?("header")
     alt_header_path = File.join(templatesdir, p['header'])
     header = File.read(alt_header_path)
@@ -75,7 +81,7 @@ deploy_hash['projects'].each do |p|
   scripts.each do |s|
     deploy_hash['scripts'].each do |f|
       if f['name'] == s['name']
-        runcommand = "#{f['command']} #{f['location']} #{f['argv']}#{loggerline} #{f['testvalue']}"
+        runcommand = "#{f['command']} #{f['location']} #{f['argv']}#{p_extra_args}#{loggerline} #{f['testvalue']}"
         runcommand = runcommand.gsub(/RUBYCMD/,rubycmd).gsub(/BKMKRCORE/,corepath).gsub(/BKMKRADDONS/,addonspath).gsub(/PITSTOP/,pitstoppath).gsub(/\s\s/," ")
         File.open(filepath, 'a+') do |f|
           f.puts runcommand
