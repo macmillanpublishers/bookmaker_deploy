@@ -65,17 +65,17 @@ rem write scriptnames to file for ProcessLogger to rm on success:
 @echo %date% %time% >> %logfile% 2>&1
 
 start /b PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bookmaker_scripts\utilities\processwatch.ps1 %p_log% '%infile%'"
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\tmparchive\tmparchive.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger tmparchive
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\htmlmaker_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker_preprocessing
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\htmlmaker\htmlmaker.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\htmlmaker_postprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker_postprocessing
+ruby S:\resources\bookmaker_scripts\bookmaker\core\tmparchive\tmparchive.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger tmparchive
+ruby S:\resources\bookmaker_scripts\bookmaker_addons\htmlmaker_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker_preprocessing
+ruby S:\resources\bookmaker_scripts\bookmaker\core\htmlmaker\htmlmaker.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker
+ruby S:\resources\bookmaker_scripts\bookmaker_addons\htmlmaker_postprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker_postprocessing
 SET SSL_CERT_FILE=C:\Ruby193\lib\ruby\site_ruby\1.9.1\rubygems\ssl_certs\cacert.pem >> %logfile% 2>&1 && call :ProcessLogger cacert
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\covermaker\bookmaker_titlepage.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger titlepage
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\metadata_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger metadata_preprocessing
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\filearchive\filearchive.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger filearchive
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\filearchive_postprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger filearchive_postprocessing
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker_addons\cleanup_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger cleanup_preprocessing
-C:\Ruby200\bin\ruby.exe S:\resources\bookmaker_scripts\bookmaker\core\cleanup\cleanup.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger cleanup
+ruby S:\resources\bookmaker_scripts\covermaker\bookmaker_titlepage.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger titlepage
+ruby S:\resources\bookmaker_scripts\bookmaker_addons\metadata_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger metadata_preprocessing
+ruby S:\resources\bookmaker_scripts\bookmaker\core\filearchive\filearchive.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger filearchive
+ruby S:\resources\bookmaker_scripts\bookmaker_addons\filearchive_postprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger filearchive_postprocessing
+ruby S:\resources\bookmaker_scripts\bookmaker_addons\cleanup_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger cleanup_preprocessing
+ruby S:\resources\bookmaker_scripts\bookmaker\core\cleanup\cleanup.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger cleanup
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bookmaker_scripts\utilities\mail-alert.ps1 '%infile%'" && call :ProcessLogger mail-alert
 
 
