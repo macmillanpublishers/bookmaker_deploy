@@ -19,7 +19,7 @@ midfile = File.join(scripts_dir, "bookmaker_deploy", "templates", "_mid.bat")
 footerfile = File.join(scripts_dir, "bookmaker_deploy", "templates", "_footer.bat")
 loggerline = ">> %logfile% 2>&1 && call :ProcessLogger"
 
-rubycmd = "C:\\Ruby200\\bin\\ruby.exe"
+rubycmd = "ruby"
 corepath = "S:\\resources\\bookmaker_scripts\\bookmaker\\core"
 addonspath = "S:\\resources\\bookmaker_scripts\\bookmaker_addons"
 pitstoppath = "S:\\resources\\bookmaker_scripts\\pitstop_watch"
