@@ -70,6 +70,7 @@ rem write scriptnames to file for ProcessLogger to rm on success:
   echo cleanup_preprocessing
   echo bookmaker-direct_return
   echo bookmaker_mailer
+  echo bookmaker_log_this_run
   echo cleanup
 	echo mail-alert
 	
@@ -104,6 +105,7 @@ ruby S:\resources\bookmaker_scripts\pitstop_watch\torDOTcom_pitstop_output.rb '%
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\cleanup_preprocessing.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger cleanup_preprocessing
 ruby S:\resources\bookmaker_scripts\bookmaker_connectors\bookmaker-direct_return.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger bookmaker-direct_return
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\bookmaker_mailer.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger bookmaker_mailer
+ruby S:\resources\bookmaker_scripts\bookmaker_connectors\bookmaker_log_this_run.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger bookmaker_log_this_run
 ruby S:\resources\bookmaker_scripts\bookmaker\core\cleanup\cleanup.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger cleanup
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bookmaker_scripts\utilities\mail-alert.ps1 '%infile%'" && call :ProcessLogger mail-alert
 

@@ -287,6 +287,14 @@
     "location": "S:\\resources\\bookmaker_scripts\\bookmaker_addons\\bookmaker_mailer.rb",
     "argv": "'%infile%' ",
     "testvalue": "bookmaker_mailer"
+    },
+    {
+    "name": "bookmaker_log_this_run",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "S:\\resources\\bookmaker_scripts\\bookmaker_connectors\\bookmaker_log_this_run.rb",
+    "argv": "'%infile%' ",
+    "testvalue": "bookmaker_log_this_run"
     }
   ],
   "projects" : [
@@ -568,6 +576,7 @@
       {"name": "cleanup_preprocessing"},
       {"name": "bookmaker-direct_return"},
       {"name": "bookmaker_mailer"},
+      {"name": "bookmaker_log_this_run"},
       {"name": "cleanup"}
     ],
     "processwatch": true,
@@ -602,6 +611,7 @@
       {"name": "cleanup_preprocessing"},
       {"name": "bookmaker-direct_return"},
       {"name": "bookmaker_mailer"},
+      {"name": "bookmaker_log_this_run"},
       {"name": "cleanup"}
     ],
     "processwatch": true,
