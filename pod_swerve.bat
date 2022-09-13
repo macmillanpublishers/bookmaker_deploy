@@ -63,8 +63,8 @@ rem write scriptnames to file for ProcessLogger to rm on success:
   echo pdfmaker_preprocessing
   echo cacert
   echo pdfmaker
-  echo torDOTcom_pitstop_input
-  echo torDOTcom_pitstop_output
+  echo send_to_pitstop
+  echo get_pitstop_output
   echo cleanup_preprocessing
   echo cleanup
 	echo mail-alert
@@ -92,8 +92,8 @@ ruby S:\resources\bookmaker_scripts\bookmaker_addons\stylesheets_postprocessing.
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\pdfmaker_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger pdfmaker_preprocessing
 SET SSL_CERT_FILE=C:\Ruby193\lib\ruby\site_ruby\1.9.1\rubygems\ssl_certs\cacert.pem >> %logfile% 2>&1 && call :ProcessLogger cacert
 ruby S:\resources\bookmaker_scripts\bookmaker\core\pdfmaker\pdfmaker.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger pdfmaker
-ruby S:\resources\bookmaker_scripts\pitstop_watch\torDOTcom_pitstop_input.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger torDOTcom_pitstop_input
-ruby S:\resources\bookmaker_scripts\pitstop_watch\torDOTcom_pitstop_output.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger torDOTcom_pitstop_output
+ruby S:\resources\bookmaker_scripts\pitstop_watch\send_to_pitstop.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger send_to_pitstop
+ruby S:\resources\bookmaker_scripts\pitstop_watch\get_pitstop_output.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger get_pitstop_output
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\cleanup_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger cleanup_preprocessing
 ruby S:\resources\bookmaker_scripts\bookmaker\core\cleanup\cleanup.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger cleanup
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bookmaker_scripts\utilities\mail-alert.ps1 '%infile%'" && call :ProcessLogger mail-alert
