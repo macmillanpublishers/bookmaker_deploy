@@ -61,11 +61,11 @@ rem write scriptnames to file for ProcessLogger to rm on success:
   echo stylesheets_postprocessing
   echo pdfmaker_preprocessing
   echo pdfmaker
-  echo torDOTcom_pitstop_input
+  echo send_to_pitstop
   echo epubmaker_preprocessing
   echo epubmaker
   echo epubmaker_postprocessing
-  echo torDOTcom_pitstop_output
+  echo get_pitstop_output
   echo cleanup_preprocessing
   echo bookmaker-direct_return
   echo bookmaker_mailer
@@ -95,11 +95,11 @@ ruby S:\resources\bookmaker_scripts\bookmaker\core\stylesheets\stylesheets.rb '%
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\stylesheets_postprocessing.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger stylesheets_postprocessing
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\pdfmaker_preprocessing.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger pdfmaker_preprocessing
 ruby S:\resources\bookmaker_scripts\bookmaker\core\pdfmaker\pdfmaker.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger pdfmaker
-ruby S:\resources\bookmaker_scripts\pitstop_watch\torDOTcom_pitstop_input.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger torDOTcom_pitstop_input
+ruby S:\resources\bookmaker_scripts\pitstop_watch\send_to_pitstop.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger send_to_pitstop
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\epubmaker_preprocessing.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger epubmaker_preprocessing
 ruby S:\resources\bookmaker_scripts\bookmaker\core\epubmaker\epubmaker.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger epubmaker
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\epubmaker_postprocessing.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger epubmaker_postprocessing
-ruby S:\resources\bookmaker_scripts\pitstop_watch\torDOTcom_pitstop_output.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger torDOTcom_pitstop_output
+ruby S:\resources\bookmaker_scripts\pitstop_watch\get_pitstop_output.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger get_pitstop_output
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\cleanup_preprocessing.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger cleanup_preprocessing
 ruby S:\resources\bookmaker_scripts\bookmaker_connectors\bookmaker-direct_return.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger bookmaker-direct_return
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\bookmaker_mailer.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger bookmaker_mailer
