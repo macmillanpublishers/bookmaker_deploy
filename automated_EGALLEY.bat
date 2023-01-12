@@ -68,7 +68,6 @@ rem write scriptnames to file for ProcessLogger to rm on success:
   echo epubmaker
   echo epubmaker_postprocessing
   echo cleanup_preprocessing
-  echo egalley_distribute
   echo validator_posts
   echo cleanup
 	echo mail-alert
@@ -101,7 +100,6 @@ ruby S:\resources\bookmaker_scripts\bookmaker_addons\epubmaker_preprocessing.rb 
 ruby S:\resources\bookmaker_scripts\bookmaker\core\epubmaker\epubmaker.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger epubmaker
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\epubmaker_postprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger epubmaker_postprocessing
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\cleanup_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger cleanup_preprocessing
-ruby S:\resources\bookmaker_scripts\bookmaker_connectors\egalley_distribute.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger egalley_distribute
 ruby S:\resources\bookmaker_scripts\bookmaker_validator\deploy_posts.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger validator_posts
 ruby S:\resources\bookmaker_scripts\bookmaker\core\cleanup\cleanup.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger cleanup
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "S:\resources\bookmaker_scripts\utilities\mail-alert.ps1 '%infile%'" && call :ProcessLogger mail-alert
