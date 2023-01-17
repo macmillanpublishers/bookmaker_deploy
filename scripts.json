@@ -257,14 +257,6 @@
     "testvalue": "validator_posts"
     },
     {
-    "name": "egalley_distribute",
-    "filetype": "rb",
-    "command": "RUBYCMD",
-    "location": "S:\\resources\\bookmaker_scripts\\bookmaker_connectors\\egalley_distribute.rb",
-    "argv": "'%infile%' ",
-    "testvalue": "egalley_distribute"
-    },
-    {
     "name": "bookmaker_to_rsuite",
     "filetype": "rb",
     "command": "RUBYCMD",
@@ -774,7 +766,6 @@
       {"name": "epubmaker"},
       {"name": "epubmaker_postprocessing"},
       {"name": "cleanup_preprocessing"},
-      {"name": "egalley_distribute"},
       {"name": "deploy_posts"},
       {"name": "cleanup"}
     ],
