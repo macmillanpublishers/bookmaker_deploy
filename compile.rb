@@ -1,6 +1,7 @@
 require 'json'
 
-# requires path of the parent folder where your deploy scripts live e.g. .. or "Users/nelliemckesson/git"
+# requires path of the parent folder where your deploy scripts live
+# => ex: `ruby ./compile.rb /Users/matthew.retzer/bookmaker_local`
 unescapeargv = ARGV[0].chomp('"').reverse.chomp('"').reverse
 scripts_dir = File.expand_path(unescapeargv)
 scripts_dir = scripts_dir.split(Regexp.union(*[File::SEPARATOR, File::ALT_SEPARATOR].compact)).join(File::SEPARATOR)

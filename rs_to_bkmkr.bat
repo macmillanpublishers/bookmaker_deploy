@@ -57,9 +57,7 @@ rem write scriptnames to file for ProcessLogger to rm on success:
   echo imagechecker_postprocessing
   echo covermaker
   echo coverchecker
-  echo stylesheets_preprocessing
   echo stylesheets
-  echo stylesheets_postprocessing
   echo pdfmaker_preprocessing
   echo pdfmaker
   echo send_to_pitstop
@@ -91,9 +89,7 @@ ruby S:\resources\bookmaker_scripts\bookmaker\core\imagechecker\imagechecker.rb 
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\imagechecker_postprocessing.rb '%infile%' '%2' '%3' >> %logfile% 2>&1 && call :ProcessLogger imagechecker_postprocessing
 ruby S:\resources\bookmaker_scripts\covermaker\bookmaker_covermaker.rb '%infile%' '%2' '%3' >> %logfile% 2>&1 && call :ProcessLogger covermaker
 ruby S:\resources\bookmaker_scripts\bookmaker\core\coverchecker\coverchecker.rb '%infile%' '%2' '%3' >> %logfile% 2>&1 && call :ProcessLogger coverchecker
-ruby S:\resources\bookmaker_scripts\bookmaker_addons\stylesheets_preprocessing.rb '%infile%' '%2' '%3' >> %logfile% 2>&1 && call :ProcessLogger stylesheets_preprocessing
 ruby S:\resources\bookmaker_scripts\bookmaker\core\stylesheets\stylesheets.rb '%infile%' '%2' '%3' >> %logfile% 2>&1 && call :ProcessLogger stylesheets
-ruby S:\resources\bookmaker_scripts\bookmaker_addons\stylesheets_postprocessing.rb '%infile%' '%2' '%3' >> %logfile% 2>&1 && call :ProcessLogger stylesheets_postprocessing
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\pdfmaker_preprocessing.rb '%infile%' '%2' '%3' >> %logfile% 2>&1 && call :ProcessLogger pdfmaker_preprocessing
 ruby S:\resources\bookmaker_scripts\bookmaker\core\pdfmaker\pdfmaker.rb '%infile%' '%2' '%3' >> %logfile% 2>&1 && call :ProcessLogger pdfmaker
 ruby S:\resources\bookmaker_scripts\pitstop_watch\send_to_pitstop.rb '%infile%' '%2' '%3' >> %logfile% 2>&1 && call :ProcessLogger send_to_pitstop

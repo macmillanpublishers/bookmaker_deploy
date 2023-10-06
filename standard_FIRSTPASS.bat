@@ -60,9 +60,7 @@ rem write scriptnames to file for ProcessLogger to rm on success:
   echo cacert
   echo covermaker
   echo coverchecker
-  echo stylesheets_preprocessing
   echo stylesheets
-  echo stylesheets_postprocessing
   echo pdfmaker_preprocessing
   echo cacert
   echo pdfmaker
@@ -95,9 +93,7 @@ ruby S:\resources\bookmaker_scripts\bookmaker_addons\imagechecker_postprocessing
 SET SSL_CERT_FILE=C:\Ruby193\lib\ruby\site_ruby\1.9.1\rubygems\ssl_certs\cacert.pem >> %logfile% 2>&1 && call :ProcessLogger cacert
 ruby S:\resources\bookmaker_scripts\covermaker\bookmaker_covermaker.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger covermaker
 ruby S:\resources\bookmaker_scripts\bookmaker\core\coverchecker\coverchecker.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger coverchecker
-ruby S:\resources\bookmaker_scripts\bookmaker_addons\stylesheets_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger stylesheets_preprocessing
 ruby S:\resources\bookmaker_scripts\bookmaker\core\stylesheets\stylesheets.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger stylesheets
-ruby S:\resources\bookmaker_scripts\bookmaker_addons\stylesheets_postprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger stylesheets_postprocessing
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\pdfmaker_preprocessing.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger pdfmaker_preprocessing
 SET SSL_CERT_FILE=C:\Ruby193\lib\ruby\site_ruby\1.9.1\rubygems\ssl_certs\cacert.pem >> %logfile% 2>&1 && call :ProcessLogger cacert
 ruby S:\resources\bookmaker_scripts\bookmaker\core\pdfmaker\pdfmaker.rb '%infile%' >> %logfile% 2>&1 && call :ProcessLogger pdfmaker
