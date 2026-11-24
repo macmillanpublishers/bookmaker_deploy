@@ -287,6 +287,14 @@
     "location": "S:\\resources\\bookmaker_scripts\\bookmaker_connectors\\bookmaker_log_this_run.rb",
     "argv": "'%infile%' ",
     "testvalue": "bookmaker_log_this_run"
+    },
+    {
+    "name": "biblio_lookups",
+    "filetype": "rb",
+    "command": "RUBYCMD",
+    "location": "BKMKRADDONS\\biblio_lookups.rb",
+    "argv": "'%infile%' ",
+    "testvalue": "biblio_lookups"
     }
   ],
   "projects" : [
@@ -533,6 +541,7 @@
       {"name": "htmlmaker_preprocessing"},
       {"name": "htmlmaker"},
       {"name": "htmlmaker_postprocessing"},
+      {"name": "biblio_lookups"},
       {"name": "bookmaker_titlepage"},
       {"name": "metadata_preprocessing"},
       {"name": "filearchive"},
@@ -567,6 +576,7 @@
       {"name": "htmlmaker_preprocessing"},
       {"name": "htmlmaker"},
       {"name": "htmlmaker_postprocessing"},
+      {"name": "biblio_lookups"},
       {"name": "bookmaker_titlepage"},
       {"name": "metadata_preprocessing"},
       {"name": "filearchive"},
