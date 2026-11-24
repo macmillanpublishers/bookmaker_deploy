@@ -49,6 +49,7 @@ rem write scriptnames to file for ProcessLogger to rm on success:
   echo htmlmaker_preprocessing
   echo htmlmaker
   echo htmlmaker_postprocessing
+  echo biblio_lookups
   echo titlepage
   echo metadata_preprocessing
   echo filearchive
@@ -71,7 +72,7 @@ rem write scriptnames to file for ProcessLogger to rm on success:
   echo bookmaker_log_this_run
   echo cleanup
 	echo mail-alert
-
+	
 ) >%p_log%
 
 @echo on
@@ -82,6 +83,7 @@ ruby S:\resources\bookmaker_scripts\bookmaker\core\tmparchive\tmparchive_direct.
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\htmlmaker_preprocessing.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker_preprocessing
 ruby S:\resources\bookmaker_scripts\bookmaker\core\htmlmaker\htmlmaker.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\htmlmaker_postprocessing.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker_postprocessing
+ruby S:\resources\bookmaker_scripts\bookmaker_addons\biblio_lookups.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger biblio_lookups
 ruby S:\resources\bookmaker_scripts\covermaker\bookmaker_titlepage.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger titlepage
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\metadata_preprocessing.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger metadata_preprocessing
 ruby S:\resources\bookmaker_scripts\bookmaker\core\filearchive\filearchive.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger filearchive
