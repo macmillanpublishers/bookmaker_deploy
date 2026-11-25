@@ -733,6 +733,7 @@
       {"name": "htmlmaker"},
       {"name": "htmlmaker_postprocessing"},
       {"name": "egalleymaker_htmlmaker_postprocessing"},
+      {"name": "biblio_lookups"},
       {"name": "cacert"},
       {"name": "bookmaker_titlepage"},
       {"name": "metadata_preprocessing"},

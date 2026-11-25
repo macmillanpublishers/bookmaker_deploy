@@ -50,6 +50,7 @@ rem write scriptnames to file for ProcessLogger to rm on success:
   echo htmlmaker
   echo htmlmaker_postprocessing
   echo egalleymaker_htmlmaker_postprocessing
+  echo biblio_lookups
   echo cacert
   echo titlepage
   echo metadata_preprocessing
@@ -80,6 +81,7 @@ ruby S:\resources\bookmaker_scripts\bookmaker_addons\htmlmaker_preprocessing.rb 
 ruby S:\resources\bookmaker_scripts\bookmaker\core\htmlmaker\htmlmaker.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\htmlmaker_postprocessing.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger htmlmaker_postprocessing
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\egalleymaker_htmlmaker_postprocessing.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger egalleymaker_htmlmaker_postprocessing
+ruby S:\resources\bookmaker_scripts\bookmaker_addons\biblio_lookups.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger biblio_lookups
 SET SSL_CERT_FILE=C:\Ruby193\lib\ruby\site_ruby\1.9.1\rubygems\ssl_certs\cacert.pem '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger cacert
 ruby S:\resources\bookmaker_scripts\covermaker\bookmaker_titlepage.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger titlepage
 ruby S:\resources\bookmaker_scripts\bookmaker_addons\metadata_preprocessing.rb '%infile%' '%2' '%3' '%4' >> %logfile% 2>&1 && call :ProcessLogger metadata_preprocessing
